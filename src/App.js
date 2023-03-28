@@ -67,9 +67,12 @@ function App() {
             dispatch(logout());
             console.log(user)
           }
-      })
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
       } else {
-        res.json().then(json => setErrors(json.error), console.log(json))
+        res.json().then(json => setErrors(json.error))
         console.log(errors)
       }
     })

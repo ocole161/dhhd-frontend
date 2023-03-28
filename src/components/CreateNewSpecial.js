@@ -81,7 +81,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
         }
         // Timeout to wait for geocode to complete
         setTimeout(() => {
-            fetch("/specials", {
+            fetch("https://dhhd-backend.onrender.com/specials", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -95,7 +95,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
                         dispatch(addSpecial(json))
                         setErrors(null)
                         closeModal()
-                        navigate(`/specials/${json.id}`)
+                        navigate(`https://dhhd-backend.onrender.com/specials/${json.id}`)
                 })
                 } else {
                     r.json().then(json => {

@@ -33,7 +33,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
 
     // Set the user's rating if one exists
     useEffect(() => {
-        fetch("/user_special_reviews")
+        fetch("https://dhhd-backend.onrender.com/user_special_reviews")
         .then(res => res.json())
         .then(reviews => {
             const userReview = reviews.find(review => review.user.id === user.id && review.special.id === parseInt([id]))
@@ -51,7 +51,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
     // Set a flag to request deletion for admin to review, but don't delete
     function requestDelete(e) {
         e.preventDefault();
-        fetch(`/specials/${special.id}`, {
+        fetch(`https://dhhd-backend.onrender.com/specials/${special.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -62,7 +62,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
         .then(r => {
             if(r.ok) {
                 r.json().then(
-                    navigate("/"),
+                    navigate("https://dhhd-backend.onrender.com/"),
                     window.alert("Your deletion request will be reviewed by an administrator soon.")
                 )
             } else {
@@ -79,7 +79,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
                 special_id: id,
                 rating: e.target.value,
             }
-            fetch("/user_special_reviews", {
+            fetch("https://dhhd-backend.onrender.com/user_special_reviews", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -98,7 +98,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
         } else {
             setUserRating({...userRating, rating: e.target.value})
             userRating.rating = e.target.value
-            fetch(`/user_special_reviews/${userRating.id}`, {
+            fetch(`https://dhhd-backend.onrender.com/user_special_reviews/${userRating.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

@@ -9,7 +9,7 @@ function NavBar() {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
-        fetch('/logout',{
+        fetch('https://dhhd-backend.onrender.com/logout',{
             method: 'DELETE',
         })
         .then(res => {

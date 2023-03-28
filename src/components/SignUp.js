@@ -34,14 +34,14 @@ function SignUp() {
             user_type: 'user',
         }
         
-        fetch('/users',{
+        fetch('https://dhhd-backend.onrender.com/users',{
             method: 'POST',
             headers:{'Content-Type': 'application/json'},
             body:JSON.stringify(user)
         })
         .then(res => {
             if(res.ok){
-                fetch('/login',{
+                fetch('https://dhhd-backend.onrender.com/login',{
                     method: 'POST',
                     headers:{'Content-Type': 'application/json'},
                     body:JSON.stringify(user)

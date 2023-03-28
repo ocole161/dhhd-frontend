@@ -78,7 +78,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
     }
 
     function patchSpecial() {
-        fetch(`/specials/${special.id}`, {
+        fetch(`https://dhhd-backend.onrender.com/specials/${special.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

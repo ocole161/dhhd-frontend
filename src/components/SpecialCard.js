@@ -15,14 +15,14 @@ function SpecialCard({ special }) {
     const [ averageRating, setAverageRating ] = useState(null)
     
     useEffect(() => {
-        fetch(`/special_average/${special.id}`)
+        fetch(`https://dhhd-backend.onrender.com/special_average/${special.id}`)
         .then(r => r.json())
         .then(r => setAverageRating(r))
     })
 
     return (
         <Col>
-            <Link to={`/specials/${special.id}`} className="no-format-link">
+            <Link to={`https://dhhd-backend.onrender.com/specials/${special.id}`} className="no-format-link">
                 <Card className="card" >
                     <Card.Img className="card_image" variant="top" src={special.location_image} alt={special.location_name} />
                     <Card.Body>

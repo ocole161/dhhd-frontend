@@ -34,7 +34,7 @@ function Login() {
             password,
         }
         
-        fetch('/login',{
+        fetch('https://dhhd-backend.onrender.com/login',{
             method: 'POST',
             headers:{'Content-Type': 'application/json'},
             body:JSON.stringify(user)

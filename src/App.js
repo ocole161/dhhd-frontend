@@ -63,10 +63,8 @@ function App() {
               user_type: data.user_type,
               id: data.id,
             }))
-            console.log(user)
           }else {
             dispatch(logout());
-            console.log(user)
           }
         })
         .catch((error) => {
@@ -74,7 +72,6 @@ function App() {
         });
       } else {
         res.json().then(json => setErrors(json.error))
-        console.log(errors)
       }
     })
   },[dispatch])

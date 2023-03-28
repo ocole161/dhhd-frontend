@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://dhhd-backend.onrender.com",
   "dependencies": {
     "@react-google-maps/api": "^2.18.1",
     "@reduxjs/toolkit": "^1.9.3",

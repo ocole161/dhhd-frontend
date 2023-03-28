@@ -52,7 +52,7 @@ function App() {
   useEffect(() => {
     fetch('/authorized')
     .then(res => {
-      // if(res.ok){
+      if(res.ok){
         res.json().then(user => {
           if(user){
             dispatch(login({
@@ -64,9 +64,9 @@ function App() {
             dispatch(logout());
           }
       })
-      // } else {
-      //   res.json().then(json => setErrors(json.error))
-      // }
+      } else {
+        res.json().then(json => setErrors(json.error))
+      }
     })
   },[dispatch])
 
@@ -81,10 +81,13 @@ function App() {
   // Show spinner if specials or user haven't loaded yet
   if (specials[0] === undefined || user.username === null) {
     return (
+      <>
       <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
-        {errors ? <Alert variant="warning" >{errors}</Alert> : null}
+
       </Spinner>
+      {errors ? <Alert variant="warning" >{errors}</Alert> : null}
+      </>
     );
   } 
 

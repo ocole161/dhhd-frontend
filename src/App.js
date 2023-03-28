@@ -52,7 +52,7 @@ function App() {
   useEffect(() => {
     fetch('/authorized')
     .then(res => {
-      if(res.ok){
+      // if(res.ok){
         res.json().then(user => {
           if(user){
             dispatch(login({
@@ -64,9 +64,9 @@ function App() {
             dispatch(logout());
           }
       })
-      } else {
-        res.json().then(json => setErrors(json.error))
-      }
+      // } else {
+      //   res.json().then(json => setErrors(json.error))
+      // }
     })
   },[dispatch])
 

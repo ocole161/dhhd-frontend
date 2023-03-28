@@ -83,6 +83,7 @@ function App() {
     return (
       <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
+        {errors ? <Alert variant="warning" >{errors}</Alert> : null}
       </Spinner>
     );
   } 

@@ -52,20 +52,25 @@ function App() {
   useEffect(() => {
     fetch('/authorized')
     .then(res => {
+      console.log(res)
       if(res.ok){
         res.json().then(user => {
+          console.log(user)
           if(user){
             dispatch(login({
               username: user.username,
               user_type: user.user_type,
               id: user.id,
             }))
+            console.log(user)
           }else {
             dispatch(logout());
+            console.log(user)
           }
       })
       } else {
-        res.json().then(json => setErrors(json.error))
+        res.json().then(json => setErrors(json.error), console.log(json))
+        console.log(errors)
       }
     })
   },[dispatch])
@@ -74,7 +79,8 @@ function App() {
     fetch("/specials")
     .then(res => res.json())
     .then(data => {
-        dispatch(setSpecials(data))
+        dispatch(setSpecials(data),
+        console.log(data))
     })
   }, [dispatch])
 

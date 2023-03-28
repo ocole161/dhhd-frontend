@@ -45,12 +45,14 @@ function CreateNewSpecial({ neighborhoods, times }) {
     
     // Send the submitted address to GoogleMaps geocoder, set the returned lat and lng in the form
     const geocodeAddress = () => {
+        console.log('Geocoding')
         const address = formData.location_address;
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_API_KEY}`)
         .then((r) => r.json())
         .then(data => {
             const latitude = data.results[0].geometry.location.lat;
             const longitude = data.results[0].geometry.location.lng;
+            console.log(latitude, longitude)
             formData.lat = latitude
             formData.lng = longitude
         })
@@ -102,7 +104,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
                     })
                 }
             })
-        }, "100");
+        }, "1000");
     }
 
     return (

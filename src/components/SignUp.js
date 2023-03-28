@@ -61,6 +61,9 @@ function SignUp() {
                 res.json().then(json => setErrors(Object.entries(json.error)))
             }
         })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
     }
 
     return (

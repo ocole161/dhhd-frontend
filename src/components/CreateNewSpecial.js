@@ -56,8 +56,8 @@ function CreateNewSpecial({ neighborhoods, times }) {
             formData.lat = latitude
             formData.lng = longitude
         })
-        .catch(errors => {
-            setErrors(errors);
+        .catch((error) => {
+            console.error("Error:", error);
         })
     }
     

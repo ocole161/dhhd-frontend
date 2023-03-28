@@ -61,9 +61,9 @@ function SpecialEdit({ neighborhoods, times, special }) {
             formData.lat = latitude
             formData.lng = longitude
         })
-        .catch(errors => {
-            setErrors(errors);
-        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
     }
     
     function handleChange(e) {
@@ -96,6 +96,9 @@ function SpecialEdit({ neighborhoods, times, special }) {
                 r.json().then(json => setErrors(json.error))
             }
         })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
     }
 
     const handleSubmit = (e) => {

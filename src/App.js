@@ -85,6 +85,9 @@ function App() {
         dispatch(setSpecials(data),
         console.log(data))
     })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
   }, [dispatch])
 
   // Show spinner if specials or user haven't loaded yet

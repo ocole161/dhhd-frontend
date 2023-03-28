@@ -38,6 +38,9 @@ function SpecialCardReview({ special }) {
                 r.json().then(json => setErrors(json.error))
             }
         })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
     }
 
     return (

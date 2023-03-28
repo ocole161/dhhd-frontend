@@ -39,9 +39,9 @@ function SpecialCardDelete({ special }) {
                 r.json().then(json => setErrors(json.error))
             }
         })
-        .catch(errors => {
-            setErrors(errors);
-        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
     }
 
     function setDeleted(e) {

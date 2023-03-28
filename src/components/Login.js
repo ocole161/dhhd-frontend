@@ -46,6 +46,9 @@ function Login() {
                     setErrors(null)
                     closeModal()
                 })
+                .catch((error) => {
+                    console.error("Error:", error);
+                  });
             } else {
                 res.json().then(json => setErrors(json.error))
             }

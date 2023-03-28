@@ -45,7 +45,7 @@ function SpecialCardReview({ special }) {
 
     return (
         <Col>
-            <Link to={`https://dhhd-backend.onrender.com/specials/${special.id}`} className="no-format-link">
+            <Link to={`/specials/${special.id}`} className="no-format-link">
             <Card style={{ width: '18rem' }} >
                 <Card.Img className="card_image" variant="top" src={special.location_image} alt={special.location_name} />
                 <Card.Body>
